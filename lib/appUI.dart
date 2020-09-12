@@ -12,6 +12,17 @@ class AppUI extends StatelessWidget {
     );
   }
 
+  catText(String txt) {
+    return Text(
+      '$txt',
+      style: TextStyle(
+        fontSize: 15,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,17 +47,36 @@ class AppUI extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      cat('pizza'),
-                      cat('sandwich'),
-                      cat('hamburger'),
-                      cat('soda'),
-                      cat('ice-cream'),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          cat('sandwich'),
+                          cat('pizza'),
+                          cat('hamburger'),
+                          cat('soda'),
+                          cat('ice-cream'),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                        width: double.infinity,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          catText('Sandwich'),
+                          catText('Pizza'),
+                          catText('Hamburger'),
+                          catText('Soda'),
+                          catText('Ice Cream')
+                        ],
+                      )
                     ],
                   ),
-                  SizedBox(height: 30, width: double.infinity),
+                  SizedBox(height: 20, width: double.infinity),
                 ],
               ),
               decoration: BoxDecoration(
