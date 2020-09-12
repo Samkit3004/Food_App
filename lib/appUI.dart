@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
 class AppUI extends StatelessWidget {
+  cat(String catImg) {
+    return CircleAvatar(
+      backgroundColor: Colors.white,
+      maxRadius: 30.0,
+      child: Image.asset(
+        'lib/images/$catImg.png',
+        height: 40,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -9,8 +20,8 @@ class AppUI extends StatelessWidget {
         body: Column(
           children: [
             Container(
-              color: Colors.deepPurpleAccent[400],
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -25,23 +36,24 @@ class AppUI extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 10,
-                    width: double.infinity,
-                  ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        maxRadius: 45.0,
-                        child: Image.asset(
-                          'lib/images/pizza.png',
-                          height: 60,
-                        ),
-                      ),
+                      cat('pizza'),
+                      cat('sandwich'),
+                      cat('hamburger'),
+                      cat('soda'),
+                      cat('ice-cream'),
                     ],
                   ),
+                  SizedBox(height: 30, width: double.infinity),
                 ],
+              ),
+              decoration: BoxDecoration(
+                color: Colors.deepPurpleAccent[400],
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(20),
+                ),
               ),
             ),
           ],
