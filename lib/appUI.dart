@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 
 class AppUI extends StatelessWidget {
-  cat(String catImg) {
-    return CircleAvatar(
-      backgroundColor: Colors.white,
-      maxRadius: 30.0,
-      child: Image.asset(
-        'lib/images/$catImg.png',
-        height: 40,
-      ),
-    );
-  }
-
-  catText(String txt) {
-    return Text(
-      '$txt',
-      style: TextStyle(
-        fontSize: 15,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
+  cat({String catImg, String txt}) {
+    return Column(
+      children: [
+        CircleAvatar(
+          backgroundColor: Colors.white,
+          maxRadius: 40.0,
+          child: Image.asset(
+            'lib/images/$catImg.png',
+            height: 50,
+          ),
+        ),
+        Text(
+          '$txt',
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        )
+      ],
     );
   }
 
@@ -47,36 +48,25 @@ class AppUI extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          cat('sandwich'),
-                          cat('pizza'),
-                          cat('hamburger'),
-                          cat('soda'),
-                          cat('ice-cream'),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                        width: double.infinity,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          catText('Sandwich'),
-                          catText('Pizza'),
-                          catText('Hamburger'),
-                          catText('Soda'),
-                          catText('Ice Cream')
-                        ],
-                      )
-                    ],
+                  Container(
+                    height: 120,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        cat(catImg: 'pizza', txt: 'Pizza'),
+                        cat(catImg: 'hamburger', txt: 'Burger'),
+                        cat(catImg: 'sandwich', txt: 'Sandwich'),
+                        cat(catImg: 'bread', txt: 'Breads'),
+                        cat(catImg: 'coffee', txt: 'Coffee'),
+                        cat(catImg: 'hot-dog', txt: 'Hot Dog'),
+                        cat(catImg: 'pie', txt: 'Pie'),
+                        cat(catImg: 'muffin', txt: 'Muffin'),
+                        cat(catImg: 'spaguetti', txt: 'Noodles'),
+                        cat(catImg: 'soda', txt: 'Drinks'),
+                        cat(catImg: 'grid', txt: 'More'),
+                      ],
+                    ),
                   ),
-                  SizedBox(height: 20, width: double.infinity),
                 ],
               ),
               decoration: BoxDecoration(
