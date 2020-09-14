@@ -78,8 +78,8 @@ class SignUP extends StatelessWidget {
                   color: Colors.deepPurpleAccent[400],
                   textColor: Colors.white,
                   child: Text(
-                    'Sign UP',
-                    style: TextStyle(fontSize: 20),
+                    'SIGN UP',
+                    style: TextStyle(fontSize: 20, letterSpacing: 3),
                   ),
                   onPressed: () {
                     Navigator.push(

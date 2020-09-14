@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AppUI extends StatelessWidget {
   cat({String catImg, String txt}) {
@@ -19,7 +20,7 @@ class AppUI extends StatelessWidget {
             fontSize: 14,
             color: Colors.white,
             letterSpacing: 2,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w700,
           ),
         )
       ],
@@ -34,7 +35,10 @@ class AppUI extends StatelessWidget {
         onPressed: () {},
         child: Text(
           '$item',
-          style: TextStyle(fontSize: 12, letterSpacing: 2),
+          style: TextStyle(
+            fontSize: 12,
+            letterSpacing: 2,
+          ),
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(40),
@@ -118,6 +122,10 @@ class AppUI extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                     ),
                   ),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 18,
+                  )
                 ],
               ),
               decoration: BoxDecoration(
@@ -138,6 +146,84 @@ class AppUI extends StatelessWidget {
                 coloredCat('PIE', Colors.purple[700], 57),
                 coloredCat('ICE CREAM', Colors.blue[900], 115),
                 coloredCat('CANNOLI', Colors.cyan, 98),
+              ],
+            ),
+            SizedBox(
+              height: 18,
+              width: double.infinity,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  height: 25,
+                  width: 18,
+                ),
+                Text(
+                  'Most Popular',
+                  style: TextStyle(
+                    fontSize: 28,
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 8,
+              width: double.infinity,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  height: 50,
+                  width: 20,
+                ),
+                Column(
+                  children: [
+                    Card(
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: Colors.white,
+                                maxRadius: 40.0,
+                                child: Image.asset(
+                                  'lib/image/dominos.png',
+                                  height: 40,
+                                ),
+                              ),
+                              Text(
+                                'Domino\'s Pizza',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  letterSpacing: 1,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                                width: 70,
+                              ),
+                              FaIcon(
+                                FontAwesomeIcons.solidHeart,
+                                color: Colors.red,
+                              ),
+                              SizedBox(
+                                height: 20,
+                                width: 8,
+                              ),
+                              Text('160'),
+                              SizedBox(
+                                height: 20,
+                                width: 9,
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
           ],
