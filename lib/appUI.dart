@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppUI extends StatelessWidget {
   cat({String catImg, String txt}) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CircleAvatar(
           backgroundColor: Colors.white,
@@ -15,12 +16,32 @@ class AppUI extends StatelessWidget {
         Text(
           '$txt',
           style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
+            fontSize: 14,
             color: Colors.white,
+            letterSpacing: 2,
+            fontWeight: FontWeight.bold,
           ),
         )
       ],
+    );
+  }
+
+  coloredCat(String item, Color colour, double wth) {
+    return Container(
+      height: 36,
+      width: wth,
+      child: FlatButton(
+        onPressed: () {},
+        child: Text(
+          '$item',
+          style: TextStyle(fontSize: 12, letterSpacing: 2),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40),
+        ),
+        color: colour,
+        textColor: Colors.white,
+      ),
     );
   }
 
@@ -60,37 +81,37 @@ class AppUI extends StatelessWidget {
                       itemBuilder: (context, index) {
                         switch (index) {
                           case 0:
-                            return cat(catImg: 'pizza', txt: 'Pizza');
+                            return cat(catImg: 'pizza', txt: 'PIZZA');
                             break;
                           case 1:
-                            return cat(catImg: 'hamburger', txt: 'Burger');
+                            return cat(catImg: 'hamburger', txt: 'BURGER');
                             break;
                           case 2:
-                            return cat(catImg: 'sandwich', txt: 'Sandwich');
+                            return cat(catImg: 'sandwich', txt: 'SANDWICH');
                             break;
                           case 3:
-                            return cat(catImg: 'bread', txt: 'Breads');
+                            return cat(catImg: 'bread', txt: 'BREADS');
                             break;
                           case 4:
-                            return cat(catImg: 'coffee', txt: 'Coffee');
+                            return cat(catImg: 'coffee', txt: 'COFFEE');
                             break;
                           case 5:
-                            return cat(catImg: 'hot-dog', txt: 'Hot Dog');
+                            return cat(catImg: 'hot-dog', txt: 'HOT DOG');
                             break;
                           case 6:
-                            return cat(catImg: 'pie', txt: 'Pie');
+                            return cat(catImg: 'pie', txt: 'PIE');
                             break;
                           case 7:
-                            return cat(catImg: 'muffin', txt: 'Muffin');
+                            return cat(catImg: 'muffin', txt: 'MUFFIN');
                             break;
                           case 8:
-                            return cat(catImg: 'spaguetti', txt: 'Noodles');
+                            return cat(catImg: 'spaguetti', txt: 'NOODLES');
                             break;
                           case 9:
-                            return cat(catImg: 'soda', txt: 'Drinks');
+                            return cat(catImg: 'soda', txt: 'DRINKS');
                             break;
                           case 10:
-                            return cat(catImg: 'grid', txt: 'More');
+                            return cat(catImg: 'grid', txt: 'MORE');
                             break;
                         }
                       },
@@ -106,22 +127,22 @@ class AppUI extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              width: double.infinity,
+              height: 18,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                coloredCat('CAKE', Colors.pinkAccent, 72),
+                coloredCat('PIE', Colors.purple[700], 57),
+                coloredCat('ICE CREAM', Colors.blue[900], 115),
+                coloredCat('CANNOLI', Colors.cyan, 98),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
 }
-//  Row(children: [
-
-//                           ,
-//                           ,
-//                           ,
-//                           ,
-//                           ,
-//                           ,
-//                           ,
-//                           ,
-//                           ,
-//
-//                         ]);
