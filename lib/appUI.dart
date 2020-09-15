@@ -8,10 +8,10 @@ class AppUI extends StatelessWidget {
       children: [
         CircleAvatar(
           backgroundColor: Colors.white,
-          maxRadius: 40.0,
+          maxRadius: 35.0,
           child: Image.asset(
             'lib/images/$catImg.png',
-            height: 50,
+            height: 45,
           ),
         ),
         Text(
@@ -124,7 +124,7 @@ class AppUI extends StatelessWidget {
                   ),
                   SizedBox(
                     width: double.infinity,
-                    height: 18,
+                    height: 15,
                   )
                 ],
               ),
@@ -149,7 +149,7 @@ class AppUI extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 18,
+              height: 15,
               width: double.infinity,
             ),
             Row(
@@ -161,7 +161,7 @@ class AppUI extends StatelessWidget {
                 Text(
                   'Most Popular',
                   style: TextStyle(
-                    fontSize: 28,
+                    fontSize: 23,
                     letterSpacing: 2,
                     fontWeight: FontWeight.bold,
                   ),
@@ -169,7 +169,7 @@ class AppUI extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 8,
+              height: 3,
               width: double.infinity,
             ),
             Row(
@@ -178,51 +178,110 @@ class AppUI extends StatelessWidget {
                   height: 50,
                   width: 20,
                 ),
-                Column(
-                  children: [
-                    Card(
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                backgroundColor: Colors.white,
-                                maxRadius: 40.0,
-                                child: Image.asset(
-                                  'lib/image/dominos.png',
-                                  height: 40,
+                Container(
+                  height: 390,
+                  width: 370,
+                  child: ListView(
+                    children: [
+                      Card(
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  maxRadius: 40.0,
+                                  child: Image.asset(
+                                    'lib/image/dominos.png',
+                                    height: 40,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                'Domino\'s Pizza',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  letterSpacing: 1,
+                                Text(
+                                  'Domino\'s Pizza',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      letterSpacing: 1,
+                                      fontWeight: FontWeight.w400),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 20,
-                                width: 70,
-                              ),
-                              FaIcon(
-                                FontAwesomeIcons.solidHeart,
-                                color: Colors.red,
-                              ),
-                              SizedBox(
-                                height: 20,
-                                width: 8,
-                              ),
-                              Text('160'),
-                              SizedBox(
-                                height: 20,
-                                width: 9,
-                              )
-                            ],
-                          ),
-                        ],
+                                SizedBox(
+                                  height: 20,
+                                  width: 70,
+                                ),
+                                FaIcon(
+                                  FontAwesomeIcons.solidHeart,
+                                  color: Colors.red,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                  width: 8,
+                                ),
+                                Text('160'),
+                                SizedBox(
+                                  height: 20,
+                                  width: 9,
+                                ),
+                              ],
+                            ),
+                            Image.asset(
+                              'lib/image/pizzza.jpg',
+                              height: 280,
+                              width: 280,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.white,
+                                      width: 3,
+                                    ),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(left: 15),
+                                        child: Text(
+                                          "Pizza Margherita",
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w400,
+                                            letterSpacing: 1,
+                                          ),
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          FaIcon(
+                                            FontAwesomeIcons.solidStar,
+                                            color: Colors.yellowAccent,
+                                          ),
+                                          FaIcon(
+                                            FontAwesomeIcons.solidStar,
+                                            color: Colors.yellowAccent,
+                                          ),
+                                          FaIcon(
+                                            FontAwesomeIcons.solidStar,
+                                            color: Colors.yellowAccent,
+                                          ),
+                                          FaIcon(
+                                            FontAwesomeIcons.solidStar,
+                                            color: Colors.yellowAccent,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    )
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
