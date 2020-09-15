@@ -49,6 +49,122 @@ class AppUI extends StatelessWidget {
     );
   }
 
+  foodItems(String logo, String restaurant, String itimage, String itname) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.grey,
+          width: 3,
+        ),
+      ),
+      child: Card(
+        child: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(width: 3, color: Colors.grey),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        maxRadius: 40.0,
+                        child: Image.asset(
+                          'lib/image/$logo.png',
+                          height: 40,
+                        ),
+                      ),
+                      Text(
+                        '$restaurant',
+                        style: TextStyle(
+                            fontSize: 18,
+                            letterSpacing: 1,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      FaIcon(
+                        FontAwesomeIcons.solidHeart,
+                        color: Colors.red,
+                      ),
+                      SizedBox(
+                        height: 20,
+                        width: 9,
+                      ),
+                      Text('160'),
+                      SizedBox(
+                        height: 20,
+                        width: 9,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Image.asset(
+              'lib/image/$itimage.jpg',
+              height: 280,
+              width: 280,
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(width: 3, color: Colors.grey),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        '$itname',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400,
+                          letterSpacing: 1,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      FaIcon(
+                        FontAwesomeIcons.solidStar,
+                        color: Colors.yellowAccent,
+                      ),
+                      FaIcon(
+                        FontAwesomeIcons.solidStar,
+                        color: Colors.yellowAccent,
+                      ),
+                      FaIcon(
+                        FontAwesomeIcons.solidStar,
+                        color: Colors.yellowAccent,
+                      ),
+                      FaIcon(
+                        FontAwesomeIcons.solidStar,
+                        color: Colors.yellowAccent,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      margin: EdgeInsets.only(bottom: 15),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,7 +174,7 @@ class AppUI extends StatelessWidget {
           children: [
             Container(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                //mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -143,8 +259,8 @@ class AppUI extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 coloredCat('CAKE', Colors.pinkAccent, 72),
-                coloredCat('PIE', Colors.purple[700], 57),
-                coloredCat('ICE CREAM', Colors.blue[900], 115),
+                coloredCat('PIE', Colors.purple[400], 57),
+                coloredCat('ICE CREAM', Colors.blue[600], 115),
                 coloredCat('CANNOLI', Colors.cyan, 98),
               ],
             ),
@@ -176,110 +292,19 @@ class AppUI extends StatelessWidget {
               children: [
                 SizedBox(
                   height: 50,
-                  width: 20,
+                  width: 13,
                 ),
                 Container(
                   height: 390,
                   width: 370,
                   child: ListView(
                     children: [
-                      Card(
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  backgroundColor: Colors.white,
-                                  maxRadius: 40.0,
-                                  child: Image.asset(
-                                    'lib/image/dominos.png',
-                                    height: 40,
-                                  ),
-                                ),
-                                Text(
-                                  'Domino\'s Pizza',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      letterSpacing: 1,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                  width: 70,
-                                ),
-                                FaIcon(
-                                  FontAwesomeIcons.solidHeart,
-                                  color: Colors.red,
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                  width: 9,
-                                ),
-                                Text('160'),
-                                SizedBox(
-                                  height: 20,
-                                  width: 9,
-                                ),
-                              ],
-                            ),
-                            Image.asset(
-                              'lib/image/pizzzza.jpg',
-                              height: 280,
-                              width: 280,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.white,
-                                      width: 3,
-                                    ),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.only(left: 15),
-                                        child: Text(
-                                          "Pizza Margherita",
-                                          style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w400,
-                                            letterSpacing: 1,
-                                          ),
-                                        ),
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          FaIcon(
-                                            FontAwesomeIcons.solidStar,
-                                            color: Colors.yellowAccent,
-                                          ),
-                                          FaIcon(
-                                            FontAwesomeIcons.solidStar,
-                                            color: Colors.yellowAccent,
-                                          ),
-                                          FaIcon(
-                                            FontAwesomeIcons.solidStar,
-                                            color: Colors.yellowAccent,
-                                          ),
-                                          FaIcon(
-                                            FontAwesomeIcons.solidStar,
-                                            color: Colors.yellowAccent,
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
+                      foodItems('dominos', 'Domino\s Pizza', 'pizzzza',
+                          'Pizza Margherita'),
+                      foodItems('burgerking', 'Burger King', 'burrger',
+                          'Whopper Burger'),
+                      foodItems('starbucks', 'Starbucks', 'muffin',
+                          'Blueberry Muffin'),
                     ],
                   ),
                 ),

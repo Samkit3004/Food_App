@@ -43,23 +43,27 @@ class SignUP extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                child: Image(
-                  image: AssetImage('lib/images/foodlogo.png'),
-                ),
+        body: ListView(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.all(15),
+              child: Image(
+                image: AssetImage('lib/images/foodlogo.png'),
               ),
-              Text(
+            ),
+            Container(
+              margin: EdgeInsets.all(15),
+              child: Text(
                 'Sign Up Free Account',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
                 ),
               ),
-              Column(
+            ),
+            Container(
+              margin: EdgeInsets.all(15),
+              child: Column(
                 children: [
                   tField(field: 'Username', ktype: TextInputType.text),
                   tField(field: 'Email', ktype: TextInputType.emailAddress),
@@ -68,7 +72,10 @@ class SignUP extends StatelessWidget {
                   tField(field: 'Phone', ktype: TextInputType.phone),
                 ],
               ),
-              SizedBox(
+            ),
+            Container(
+              margin: EdgeInsets.all(20),
+              child: SizedBox(
                 height: 50,
                 width: 360,
                 child: RaisedButton(
@@ -91,8 +98,8 @@ class SignUP extends StatelessWidget {
                   },
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
