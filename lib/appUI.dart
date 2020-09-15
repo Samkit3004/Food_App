@@ -223,7 +223,7 @@ class AppUI extends StatelessWidget {
                               ],
                             ),
                             Image.asset(
-                              'lib/image/pizzza.jpg',
+                              'lib/image/pizzzza.jpg',
                               height: 280,
                               width: 280,
                             ),
