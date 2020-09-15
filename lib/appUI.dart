@@ -213,7 +213,7 @@ class AppUI extends StatelessWidget {
                                 ),
                                 SizedBox(
                                   height: 20,
-                                  width: 8,
+                                  width: 9,
                                 ),
                                 Text('160'),
                                 SizedBox(
