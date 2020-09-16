@@ -15,25 +15,38 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class SignUP extends StatelessWidget {
-  tField({String field, TextInputType ktype}) {
+class SignUP extends StatefulWidget {
+  @override
+  _SignUPState createState() => _SignUPState();
+}
+
+class _SignUPState extends State<SignUP> {
+  bool autoValidate = false;
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  tField(String field, TextInputType ktype, TextEditingController ctrller,
+      bool obscT) {
     return Container(
-      child: TextField(
+      child: TextFormField(
+        controller: ctrller,
+        validator: (value) => value.isEmpty ? '*Required' : null,
+        autovalidate: autoValidate,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(40),
             ),
           ),
-          fillColor: Colors.grey[300],
-          hintStyle: new TextStyle(
+          hintStyle: TextStyle(
             color: Colors.grey[600],
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+            fontSize: 18,
           ),
           hintText: '$field',
         ),
         keyboardType: ktype,
+        obscureText: obscT,
       ),
       margin: EdgeInsets.all(10),
     );
@@ -52,7 +65,7 @@ class SignUP extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(15),
+              margin: EdgeInsets.all(10),
               child: Text(
                 'Sign Up Free Account',
                 style: TextStyle(
@@ -62,19 +75,21 @@ class SignUP extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(15),
+              margin: EdgeInsets.all(10),
               child: Column(
                 children: [
-                  tField(field: 'Username', ktype: TextInputType.text),
-                  tField(field: 'Email', ktype: TextInputType.emailAddress),
-                  tField(
-                      field: 'Password', ktype: TextInputType.visiblePassword),
-                  tField(field: 'Phone', ktype: TextInputType.phone),
+                  tField('Username', TextInputType.text, usernameController,
+                      false),
+                  tField('Email', TextInputType.emailAddress, emailController,
+                      false),
+                  tField('Password', TextInputType.visiblePassword,
+                      passwordController, true),
+                  tField('Phone', TextInputType.phone, phoneController, false),
                 ],
               ),
             ),
             Container(
-              margin: EdgeInsets.all(20),
+              margin: EdgeInsets.all(15),
               child: SizedBox(
                 height: 50,
                 width: 360,
@@ -89,6 +104,30 @@ class SignUP extends StatelessWidget {
                     style: TextStyle(fontSize: 20, letterSpacing: 3),
                   ),
                   onPressed: () {
+                    if (usernameController.text.isEmpty) {
+                      setState(() {
+                        autoValidate = true;
+                      });
+                      return;
+                    }
+                    if (emailController.text.isEmpty) {
+                      setState(() {
+                        autoValidate = true;
+                      });
+                      return;
+                    }
+                    if (passwordController.text.isEmpty) {
+                      setState(() {
+                        autoValidate = true;
+                      });
+                      return;
+                    }
+                    if (phoneController.text.isEmpty) {
+                      setState(() {
+                        autoValidate = true;
+                      });
+                      return;
+                    }
                     Navigator.push(
                       context,
                       MaterialPageRoute(

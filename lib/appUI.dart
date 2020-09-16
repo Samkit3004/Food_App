@@ -29,15 +29,19 @@ class AppUI extends StatelessWidget {
 
   coloredCat(String item, Color colour, double wth) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
       height: 36,
       width: wth,
       child: FlatButton(
         onPressed: () {},
-        child: Text(
-          '$item',
-          style: TextStyle(
-            fontSize: 12,
-            letterSpacing: 2,
+        child: Container(
+          padding: EdgeInsets.all(1),
+          child: Text(
+            '$item',
+            style: TextStyle(
+              fontSize: 12,
+              letterSpacing: 2,
+            ),
           ),
         ),
         shape: RoundedRectangleBorder(
@@ -114,7 +118,7 @@ class AppUI extends StatelessWidget {
               width: 280,
             ),
             Container(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(width: 3, color: Colors.grey),
@@ -255,14 +259,20 @@ class AppUI extends StatelessWidget {
               width: double.infinity,
               height: 18,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                coloredCat('CAKE', Colors.pinkAccent, 72),
-                coloredCat('PIE', Colors.purple[400], 57),
-                coloredCat('ICE CREAM', Colors.blue[600], 115),
-                coloredCat('CANNOLI', Colors.cyan, 98),
-              ],
+            Container(
+              width: double.infinity,
+              height: 36,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  coloredCat('CAKE', Colors.pinkAccent, 74),
+                  coloredCat('PIE', Colors.purple[400], 59),
+                  coloredCat('ICE CREAM', Colors.blue[600], 115),
+                  coloredCat('CANNOLI', Colors.cyan, 100),
+                  coloredCat('SPECIALS', Colors.tealAccent[400], 105),
+                  coloredCat('OFFERS', Colors.deepOrange[400], 95)
+                ],
+              ),
             ),
             SizedBox(
               height: 15,
