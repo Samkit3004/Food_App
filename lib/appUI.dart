@@ -305,16 +305,28 @@ class AppUI extends StatelessWidget {
                   width: 13,
                 ),
                 Container(
-                  height: 390,
-                  width: 370,
+                  height: MediaQuery.of(context).size.height * 0.50,
+                  width: MediaQuery.of(context).size.width * 0.94,
                   child: ListView(
                     children: [
-                      foodItems('dominos', 'Domino\s Pizza', 'pizzzza',
+                      foodItems('dominos', 'Domino\'s Pizza', 'pizzzza',
                           'Pizza Margherita'),
                       foodItems('burgerking', 'Burger King', 'burrger',
                           'Whopper Burger'),
                       foodItems('starbucks', 'Starbucks', 'muffin',
                           'Blueberry Muffin'),
+                      foodItems('baskins', 'Baskin Robbins', 'icrm',
+                          'Baskin\'s Special'),
+                      foodItems(
+                          'ccd', 'Cafe Coffee Day', 'cofffee', 'Espresso'),
+                      foodItems(
+                          'keventers', 'Keventers', 'shake', 'Kit Kat Shake'),
+                      foodItems('kfc', 'KFC', 'chicken', 'Chicken Wings'),
+                      foodItems(
+                          'mcd', 'McDonald\'s', 'maharaja', 'Mc Maharaja'),
+                      foodItems('mod', 'Mad Over Donuts', 'donuts', 'Donuts'),
+                      foodItems('pizzahut', 'Pizza Hut', 'pizzahutt',
+                          'Pepperoni Pizza'),
                     ],
                   ),
                 ),
