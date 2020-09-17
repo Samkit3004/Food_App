@@ -128,7 +128,7 @@ class _SignUPState extends State<SignUP> {
                       });
                       return;
                     }
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                         builder: (context) => AppUI(),
