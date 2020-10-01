@@ -100,7 +100,7 @@ class _SignUPState extends State<SignUP> {
                   color: Colors.deepPurpleAccent[400],
                   textColor: Colors.white,
                   child: Text(
-                    'SIGN UP',
+                    'SIGN up',
                     style: TextStyle(fontSize: 20, letterSpacing: 3),
                   ),
                   onPressed: () {
